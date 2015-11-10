@@ -1,0 +1,24 @@
+CREATE TABLE CUSTOMER(
+						Cust_email				VARCHAR(30) NOT NULL PRIMARY KEY,
+						Cust_name				VARCHAR(20) NOT NULL,
+						Cust_password			VARCHAR(20) NOT NULL,
+						Cust_phoneno			INT(10) NOT NULL
+												)
+												
+CREATE TABLE BOOKING(
+						Pass_book_num			INT(6) PRIMARY KEY,
+						Pass_book_email 		VARCHAR(30) NOT NULL,
+						Pass_name				VARCHAR(20) NOT NULL,		
+						Pass_phoneno			INT(10) NOT NULL,
+						Pass_unit_no			INT(10),
+						Pass_street_no			INT(10) NOT NULL,
+						Pass_street_name		VARCHAR(20) NOT NULL,
+						Pass_suburb				VARCHAR(20) NOT NULL,
+						Pass_dest_suburb		VARCHAR(20) NOT NULL,
+						Pass_pick_up_date		DATE NOT NULL,
+						Pass_pick_up_time		TIME NOT NULL,
+						Booking_curr_date		DATE NOT NULL,
+						Booking_curr_time		TIME NOT NULL,
+						Status					VARCHAR(20),
+						FOREIGN KEY (Pass_book_email) REFERENCES CUSTOMER(Cust_email)
+														)
